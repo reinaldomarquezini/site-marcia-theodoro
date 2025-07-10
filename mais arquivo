@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sousplat feito com amor - Márcia Theodoro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    .section-content {
+      display: none;
+    }
+    .section-content.active {
+      display: block;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section.section-content");
+      sections.forEach(section => section.classList.remove("active"));
+      const selected = document.getElementById(id);
+      if (selected) selected.classList.add("active");
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      showSection('sobre');
+    });
+  </script>
+</head>
+<body class="bg-neutral-50 text-gray-800">
+  <header class="bg-rose-100 py-6 text-center text-rose-900 shadow">
+    <h1 class="text-4xl font-bold tracking-wide">Sousplat feito com amor</h1>
+    <p class="text-lg italic">Artesanato por Márcia Theodoro</p>
+  </header>
+
+  <nav class="bg-white sticky top-0 z-50 shadow-md py-3 border-b border-rose-200">
+    <div class="max-w-4xl mx-auto flex justify-center gap-6 text-sm font-medium text-rose-700">
+      <button onclick="showSection('sobre')" class="hover:text-rose-500 transition">Sobre</button>
+      <button onclick="showSection('produtos')" class="hover:text-rose-500 transition">Produtos</button>
+      <button onclick="showSection('comprar')" class="hover:text-rose-500 transition">Como Comprar</button>
+      <button onclick="showSection('contato')" class="hover:text-rose-500 transition">Contato</button>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 pt-10 pb-16">
+    <section class="bg-yellow-400 border-4 border-yellow-600 rounded-lg p-6 mb-10 text-center shadow-xl">
+      <h2 class="text-3xl font-extrabold text-white mb-2">🎉 Feliz Aniversário, Mãe! 🎉</h2>
+      <p class="text-lg text-white font-semibold">14 de julho — Te amo, tenho muito orgulho de você e de ser seu filho. ❤️</p>
+    </section>
+
+    <section id="sobre" class="section-content active">
+      <h2 class="text-2xl font-bold text-rose-700 mb-4">Sobre o Ateliê</h2>
+      <img src="imagens/marcia-theodoro.jpg" alt="Márcia Theodoro" class="w-48 h-48 rounded-full mx-auto mb-6 shadow-lg object-cover">
+      <p class="text-justify leading-relaxed text-gray-700">O Ateliê Márcia Theodoro nasceu da paixão por crochê e pelo cuidado nos detalhes. Cada sousplat é feito à mão com muito carinho para deixar sua mesa mais charmosa e acolhedora. Essa é uma atividade que aprendi com minha avó Conceição, que me ensinou com paciência e amor cada ponto e cada detalhe do artesanato.</p>
+    </section>
+
+    <section id="produtos" class="section-content">
+      <h2 class="text-2xl font-bold text-rose-700 mb-4">Galeria de Produtos</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <img src="imagens/sousplat1.jpg" alt="Sousplat vermelho artesanal" class="w-72 rounded shadow">
+        <img src="imagens/sousplat2.jpg" alt="Sousplat branco com bordado dourado" class="w-72 rounded shadow">
+        <img src="imagens/sousplat3.jpg" alt="Trilho de mesa verde com flores" class="w-72 rounded shadow">
+      </div>
+    </section>
+
+    <section id="comprar" class="section-content">
+      <h2 class="text-2xl font-bold text-rose-700 mb-4">Como Comprar</h2>
+      <p class="mb-4 text-gray-700">Entre em contato pelo Instagram ou WhatsApp informando o modelo desejado, as cores e quantidades. As peças são feitas sob encomenda e enviamos para todo o Brasil.</p>
+      <p class="mb-4 text-gray-700 font-semibold">📦 Encomendas: (31) 98723-7666</p>
+      <a href="https://www.instagram.com/marciacctm?igsh=dWJ0cGNtMG9rN3pk" target="_blank" class="inline-block bg-rose-600 text-white px-5 py-2 rounded hover:bg-rose-700 transition">Fazer pedido no Instagram</a>
+    </section>
+
+    <section id="contato" class="section-content">
+      <h2 class="text-2xl font-bold text-rose-700 mb-4">Contato</h2>
+      <p class="mb-2">📱 WhatsApp: (31) 98723-7666</p>
+      <p>📷 Instagram: <a href="https://instagram.com/marciacctm" target="_blank" class="text-rose-600 underline hover:text-rose-800">@marciacctm</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-rose-100 text-rose-900 text-center py-4 border-t border-rose-200 mt-auto">
+    <p>&copy; 2025 Márcia Theodoro - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
